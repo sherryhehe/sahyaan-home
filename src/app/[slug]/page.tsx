@@ -7,10 +7,9 @@ import { collection, getDocs, query, where, limit } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import Loading from "@/components/Loading";
 
-const APP_SCHEME = "sahyaan-shopping";
-const APP_PACKAGE = "com.sahyaan.app";
-const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf";
+const APP_SCHEME = process.env.APP_SCHEME;
+const APP_PACKAGE = process.env.APP_PACKAGE;
+const PLAY_STORE_URL = process.env.PLAY_STORE_URL;
 
 export default function DeepLinkPage() {
   const { slug }: { slug: string } = useParams();
